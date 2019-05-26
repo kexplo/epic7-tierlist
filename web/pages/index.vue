@@ -33,7 +33,7 @@
         <td class="text-xs-right"><img :src="props.item.recommended_artifact"></td>
         <td class="text-xs-right"><img :src="props.item.alternate_artifact"></td>
         <td class="text-xs-right"><img :src="props.item.alternate_artifact2"></td>
-        <td class="text-xs-right">{{ props.item.note }}</td>
+        <td class="text-xs-left">{{ props.item.note }}</td>
       </template>
       <template v-slot:no-results>
         <v-alert :value="true" color="error" icon="warning">
