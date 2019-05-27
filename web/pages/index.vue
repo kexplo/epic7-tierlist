@@ -1,51 +1,15 @@
 <template>
-  <v-card>
-    <v-card-title>
-      Epic 7 Tier List
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        append-icon="search"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-data-table
-      :headers="headers"
-      :items="tiers"
-      :search="search"
-      :pagination.sync="pagination"
-    >
-      <template v-slot:items="props">
-        <td><img :src="props.item.img"></td>
-        <td class="text-xs-right">{{ props.item.name }}</td>
-        <td class="text-xs-right">{{ props.item.star }}</td>
-        <td class="text-xs-right">{{ props.item.element }}</td>
-        <td class="text-xs-right"><img :src="props.item.class"></td>
-        <td class="text-xs-right">{{ props.item.hunt }}</td>
-        <td class="text-xs-right">{{ props.item.abyss }}</td>
-        <td class="text-xs-right">{{ props.item.raid }}</td>
-        <td class="text-xs-right">{{ ((props.item.hunt + props.item.abyss + props.item.raid) / 3).toFixed(2) }}</td>
-        <td class="text-xs-right">{{ props.item.recommended_set }}</td>
-        <td class="text-xs-right">{{ props.item.neck }}</td>
-        <td class="text-xs-right">{{ props.item.suggested_roles }}</td>
-        <td class="text-xs-right"><img :src="props.item.recommended_artifact"></td>
-        <td class="text-xs-right"><img :src="props.item.alternate_artifact"></td>
-        <td class="text-xs-right"><img :src="props.item.alternate_artifact2"></td>
-        <td class="text-xs-left">{{ props.item.note }}</td>
-      </template>
-      <template v-slot:no-results>
-        <v-alert :value="true" color="error" icon="warning">
-          Your search for "{{ search }}" found no results.
-        </v-alert>
-      </template>
-    </v-data-table>
-  </v-card>
+  <tier-table v-model="search" :headers="headers" :items="tiers" :pagination="pagination" title="Epic 7 Tier List (PvE)" />
 </template>
 
 <script>
+import TierTable from '~/components/TierTable.vue'
+
 export default {
+  components: {
+    TierTable
+  },
+
   data() {
     return {
       search: '',
@@ -58,23 +22,24 @@ export default {
           text: '',
           align: 'left',
           sortable: false,
-          value: 'img'
+          value: 'img',
+          class: 'pa-1'
         },
-        { text: 'Name', value: 'name' },
-        { text: '★', value: 'star' },
-        { text: 'Element', value: 'element' },
-        { text: 'Class', value: 'class' },
-        { text: 'Hunt', value: 'hunt' },
-        { text: 'Abyss', value: 'abyss' },
-        { text: 'Raid', value: 'raid' },
-        { text: 'PvE Average', value: 'pve_average' },
-        { text: 'Recommended Set', value: 'recommended_set' },
-        { text: 'Neck', value: 'neck' },
-        { text: 'Suggested Roles', value: 'suggested_roles' },
-        { text: 'Recommended Artifact', value: 'recommended_artifact' },
-        { text: 'Alternative Artifact', value: 'alternate_artifact' },
-        { text: 'Alternative Artifact', value: 'alternate_artifact2' },
-        { text: 'Note', value: 'note' }
+        { text: 'Name', value: 'name', class: 'pa-1' },
+        { text: '★', value: 'star', class: 'pa-1' },
+        { text: 'Element', value: 'element', class: 'pa-1' },
+        { text: 'Class', value: 'class', class: 'pa-1' },
+        { text: 'Hunt', value: 'hunt', class: 'pa-1' },
+        { text: 'Abyss', value: 'abyss', class: 'pa-1' },
+        { text: 'Raid', value: 'raid', class: 'pa-1' },
+        { text: 'PvE Average', value: 'pve_average', class: 'pa-1' },
+        { text: 'Recommended Set', value: 'recommended_set', class: 'pa-1' },
+        { text: 'Neck', value: 'neck', class: 'pa-1' },
+        { text: 'Suggested Roles', value: 'suggested_roles', class: 'pa-1' },
+        { text: 'Recommended Artifact', value: 'recommended_artifact', class: 'pa-1' },
+        { text: 'Alternative Artifact', value: 'alternate_artifact', class: 'pa-1' },
+        { text: 'Alternative Artifact', value: 'alternate_artifact2', class: 'pa-1' },
+        { text: 'Note', value: 'note', class: 'pa-1 cl-tier-note' }
       ],
 
       tiers: [
