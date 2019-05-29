@@ -2,7 +2,7 @@ import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
 const _router = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  base: '/epic7tierlist/' // repositoy name
+  base: '/epic7-tierlist/' // repositoy name
 } : {}
 
 export default {
