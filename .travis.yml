@@ -8,7 +8,6 @@ before_install:
   - npm install
 
 install:
-  - cd web
   - npm run generate:gh-pages
 
 deploy:
