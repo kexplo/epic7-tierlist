@@ -1,0 +1,24 @@
+dist: xenial
+langauge: node_js
+node_js: 
+  - "lts/*"  # latest LTS Node.js release
+
+before_install:
+  - cd web
+  - npm install
+
+install:
+  - cd web
+  - npm run generate:gh-pages
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: web/dist
+  target_branch: gh-pages
+  email: me@chanwoong.kim
+  name: Chanwoong Kim
+  on:
+    branch: master
