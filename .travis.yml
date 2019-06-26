@@ -3,11 +3,11 @@ langauge: node_js
 node_js: 
   - "lts/*"  # latest LTS Node.js release
 
-before_install:
+install:
   - cd web
   - npm install
 
-install:
+script:
   - npm run generate:gh-pages
 
 deploy:
