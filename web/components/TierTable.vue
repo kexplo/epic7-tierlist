@@ -14,8 +14,8 @@
               v-for="item in [5, 10, 15, 20]"
               :key="item"
               :label="item"
-              :value="item">
-            </el-option>
+              :value="item"
+            />
           </el-select>
         </el-col>
       </el-row>
