@@ -123,6 +123,9 @@ export default {
   computed: {
     filtered_items: function() {
       let copied_array = [...this.items];
+      if (this.search.length > 0) {
+        copied_array = copied_array.filter(x => x.name.includes(this.search));
+      }
       let sortKey = this.sortKey;
       // sortOrder: [descending, ascending, null]
       let sortOrder = this.sortOrder;
