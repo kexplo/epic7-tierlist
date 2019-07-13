@@ -100,10 +100,6 @@ export default {
       type: Object,
       default: () => {}
     },
-    search: {
-      type: String,
-      default: ''
-    },
     title: {
       type: String,
       default: ''
@@ -118,6 +114,7 @@ export default {
       page: 1,
       sortKey: null,
       sortOrder: null,
+      search: '',
     }
   },
   computed: {
