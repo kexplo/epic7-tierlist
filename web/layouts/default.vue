@@ -2,29 +2,28 @@
   <el-container>
     <el-header>
       <el-menu
-        :default-active="'1'"
+        :default-active="'2-1'"
         class="el-menu-demo"
         mode="horizontal"
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b"
         @select="handleSelect"
+        :router="true"
       >
-        <el-menu-item index="1">
+        <el-menu-item index="1" route="/">
           epic7-tierlist
         </el-menu-item>
         <el-submenu index="2">
-          <template slot="title">
-            Tier List
-          </template>
-          <el-menu-item index="2-1">
+          <template slot="title">Tier List</template>
+          <el-menu-item index="2-1" route="/">
             PvE
           </el-menu-item>
-          <el-menu-item index="2-2">
+          <el-menu-item index="2-2" route="pvp">
             PvP
           </el-menu-item>
         </el-submenu>
-        <el-menu-item index="3">
+        <el-menu-item index="3" route="credits">
           Credits
         </el-menu-item>
       </el-menu>

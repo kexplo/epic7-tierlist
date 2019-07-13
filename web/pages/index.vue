@@ -6,6 +6,41 @@
 import TierTable from '~/components/TierTable.vue'
 import pve_data from '~/static/pve.json'
 
+/*
+TODO: USE VALUE. NOT URL
+const classFilters = [
+  { text: 'Warrior', value: 'Warrior' },
+  { text: 'Knight', value: 'Knight' },
+  { text: 'Ranger', value: 'Ranger' },
+  { text: 'Soul Weaver', value: 'Soul Weaver' },
+  { text: 'Mage', value: 'Mage' },
+  { text: 'Thief', value: 'Thief' },
+  ];
+*/
+const classFilters = [
+  { text: 'Warrior', value: 'https://i.imgur.com/a34GyyB.png' },
+  { text: 'Knight', value: 'https://i.imgur.com/3OCQgMB.png' },
+  { text: 'Ranger', value: 'https://i.imgur.com/4UWNMER.png' },
+  { text: 'Soul Weaver', value: 'https://i.imgur.com/TsuJvXE.png' },
+  { text: 'Mage', value: 'https://i.imgur.com/hGAL2QJ.png' },
+  { text: 'Thief', value: 'https://i.imgur.com/YZa7qSv.png' },
+  ];
+
+const elementFilters = [
+  { text: 'Ice', value: 'Ice' },
+  { text: 'Fire', value: 'Fire' },
+  { text: 'Earth', value: 'Earth' },
+  { text: 'Light', value: 'Light' },
+  { text: 'Dark', value: 'Dark' },
+  ];
+const starFilters = [
+  { text: '★★★★★', value: 5 },
+  { text: '★★★★', value: 4 },
+  { text: '★★★', value: 3 },
+  { text: '★★', value: 2 },
+  { text: '★', value: 1 },
+  ];
+
 export default {
   components: {
     TierTable
@@ -21,9 +56,9 @@ export default {
       headers: [
         { text: '', align: 'left', sortable: false, value: 'img', class: 'pa-1', type: 'img', width: 150, fixed: true },
         { text: 'Name', value: 'name', class: 'pa-1', sortable: true, width: 150 },
-        { text: '★', value: 'star', class: 'pa-1', sortable: true, width: 70 },
-        { text: 'Element', value: 'element', class: 'pa-1' },
-        { text: 'Class', value: 'class', class: 'pa-1', type: 'img' },
+        { text: '★', value: 'star', class: 'pa-1', sortable: true, width: 70 , filters: starFilters },
+        { text: 'Element', value: 'element', class: 'pa-1', filters: elementFilters },
+        { text: 'Class', value: 'class', class: 'pa-1', type: 'img', filters: classFilters },
         { text: 'Hunt', value: 'hunt', class: 'pa-1', sortable: true, width: 70 },
         { text: 'Abyss', value: 'abyss', class: 'pa-1', sortable: true, width: 70 },
         { text: 'Raid', value: 'raid', class: 'pa-1', sortable: true, width: 70 },
