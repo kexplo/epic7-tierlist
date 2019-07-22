@@ -179,3 +179,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .el-table td .cell {
+    white-space: pre-wrap;
+  }
+</style>
