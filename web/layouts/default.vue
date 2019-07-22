@@ -32,9 +32,22 @@
 </template>
 
 <style>
+.el-header {
+  padding: 0;
+}
+
 .el-table .cell {
   white-space: inherit;
   word-break: break-word;
+}
+
+@media ( max-width: 767px ) {
+  .el-main {
+    padding: 0;
+  }
+  .el-card__body {
+    padding: 0;
+  }
 }
 
 html {
