@@ -72,22 +72,6 @@
       :total="filtered_items.length"
       @current-change="current_change"
     />
-
-    <!--
-    <el-table
-      :data="items"
-    >
-      <template v-for="header in headers">
-        <el-table-column v-if="header.value == 'img'" :key="header.name" :prop="header.value" :label="header.text">
-          <template slot-scope="scope">
-            <el-image :src="scope.row.img" />
-          </template>
-        </el-table-column>
-        <el-table-column v-else :key="header.name" :prop="header.value" :label="header.text">
-        </el-table-column>
-      </template>
-    </el-table>
-    -->
   </el-card>
 </template>
 
