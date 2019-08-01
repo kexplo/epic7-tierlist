@@ -66,9 +66,9 @@ export default {
         { text: 'Recommended Set', value: 'recommended_set', class: 'pa-1', width: 150 },
         { text: 'Neck', value: 'neck', class: 'pa-1' },
         { text: 'Suggested Roles', value: 'suggested_roles', class: 'pa-1', width: 150 },
-        { text: 'Recommended Artifact', value: 'recommended_artifact', class: 'pa-1', width: 160, type: 'img' },
-        { text: 'Alternative Artifact', value: 'alternate_artifact', class: 'pa-1', width: 160, type: 'img' },
-        { text: 'Alternative Artifact', value: 'alternate_artifact2', class: 'pa-1', width: 160, type: 'img' },
+        { text: 'Recommended Artifact', value: 'recommended_artifact', class: 'pa-1', width: 220, type: 'img' },
+        { text: 'Alternative Artifact', value: 'alternate_artifact', class: 'pa-1', width: 220, type: 'img' },
+        { text: 'Alternative Artifact', value: 'alternate_artifact2', class: 'pa-1', width: 220, type: 'img' },
         { text: 'Note', value: 'note', class: 'pa-1 cl-tier-note', width: 420 }
       ],
 
